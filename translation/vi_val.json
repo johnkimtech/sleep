@@ -1,0 +1,59 @@
+{
+    "Gender": {
+        "Nữ": "Female",
+        "Nam": "Male"
+    },
+    "Education Level": {
+        "Thạc sĩ": "Master's",
+        "Cử nhân": "Bachelor's",
+        "THPT": "High School",
+        "Tiến sĩ": "Doctorate"
+    },
+    "Occupation": {
+        "Chuyên nghiệp/văn phòng": "Professional/Office Worker",
+        "Học sinh / Sinh viên": "Student",
+        "Giáo viên": "Teacher",
+        "Reseacher": "Researcher"
+    },
+    "Exercise Days/Week": {
+        "3-4 ngày": "3-4 Days",
+        "1-2 ngày": "1-2 Days",
+        "0 ngày": "0 Days",
+        "5 ngày trở lên": "5+ Days"
+    },
+    "Device Usage (hrs/day)": {
+        "4-6 giờ": "4-6 Hours",
+        "7 giờ trở lên": "7+ Hours",
+        "1-3 giờ": "1-3 Hours"
+    },
+    "Screen Time Before Sleep": {
+        "1-2 giờ": "1-2 Hours",
+        "Hơn 2 giờ": "2+ Hours",
+        "Ít hơn 30 phút": "<30 Minutes",
+        "30 phút - 1 giờ": "30-60 Minutes"
+    },
+    "Sleep Onset Time": {
+        "Ít hơn 15 phút": "<15 Minutes",
+        "30-60 phút": "30-60 Minutes",
+        "15-30 phút": "15-30 Minutes",
+        "Hơn 60 phút": ">60 Minutes"
+    },
+    "Nap Duration": {
+        "Tôi không ngủ trưa": "No Nap",
+        "60-90 phút": "60-90 Minutes",
+        "30-60 phút": "30-60 Minutes",
+        "Dưới 30 phút": "<30 Minutes"
+    },
+    "Sleep Duration (hrs/24hr)": {
+        "Hơn 6 giờ": "6+ Hours",
+        "4-6 giờ": "4-6 Hours"
+    },
+    "Sleep Disturbances": {
+        "Hiếm khi": "Rarely",
+        "Thỉnh thoảng": "Sometimes",
+        "Không bao giờ": "Never"
+    },
+    "Sleep Medication": {
+        "Không": "No"
+    }
+}

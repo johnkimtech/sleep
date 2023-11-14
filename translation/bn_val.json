@@ -1,0 +1,69 @@
+{
+    "Gender": {
+        "পুরুষ": "Male",
+        "মহিলা": "Female",
+        "অন্যান্য": "Other"
+    },
+    "Education Level": {
+        "মাস্টার্স ডিগ্রি": "Master's",
+        "ব্যাচলার ডিগ্রি": "Bachelor's",
+        "ডক্টরেট বা পেশাদার ডিগ্রি": "Doctorate",
+        "উচ্চ মাধ্যমিক": "High School"
+    },
+    "Occupation": {
+        "অন্যান্য:": "Other",
+        "পেশাদার / অফিস কর্মী": "Professional/Office Worker",
+        "ছাত্র": "Student",
+        "বেকার": "Unemployed",
+        "পরিষেবা (বিক্রয়, খাদ্য পরিষেবা ইত্যাদি)": "Service"
+    },
+    "Exercise Days/Week": {
+        "১-২ দিন": "1-2 Days",
+        "৩-৪ দিন": "3-4 Days",
+        "০ দিন": "0 Days",
+        "৫ বা আরও বেশি": "5+ Days"
+    },
+    "Device Usage (hrs/day)": {
+        "১-৩ ঘণ্টা": "1-3 Hours",
+        "৪-৬ ঘণ্টা": "4-6 Hours",
+        "৭ অথবা আরও ঘণ্টা": "7+ Hours"
+    },
+    "Screen Time Before Sleep": {
+        "৩০ মিনিট - ১ ঘণ্টা": "30-60 Minutes",
+        "৩০ মিনিটের কম": "<30 Minutes",
+        "২ ঘণ্টা অথবা তার বেশি": "2+ Hours",
+        "১-২ ঘণ্টা": "1-2 Hours"
+    },
+    "Sleep Onset Time": {
+        "৬০ মিনিটের বেশি": ">60 Minutes",
+        "১৫-৩০ মিনিট": "15-30 Minutes",
+        "১৫ মিনিটের কম": "<15 Minutes",
+        "৩০-৬০ মিনিট": "30-60 Minutes"
+    },
+    "Nap Duration": {
+        "হ্যাঁ, ৩০ মিনিটের কম": "Yes, <30 mins",
+        "না, আমি দিনে ঘুমায় না": "No Nap",
+        "হ্যাঁ, ৩০-৬০ মিনিট": "Yes, 30-60 mins",
+        "হ্যাঁ, ৯০ মিনিটের বেশি": "Yes, >90 mins"
+    },
+    "Sleep Duration (hrs/24hr)": {
+        "৪-৬ ঘণ্টা": "4-6 Hours",
+        "৬ ঘণ্টা এবং তার বেশি": "6+ Hours"
+    },
+    "Sleep Quality": {
+        "4": "4",
+        "5": "5",
+        "3": "3",
+        "2": "2"
+    },
+    "Sleep Disturbances": {
+        "প্রায় সময়ই": "Often",
+        "মাঝে মধ্যেই": "Sometimes",
+        "হঠাৎ হঠাৎ": "Rarely",
+        "কখনও না": "Never"
+    },
+    "Sleep Medication": {
+        "না": "No",
+        "হ্যাঁ": "Yes"
+    }
+}

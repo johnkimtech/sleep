@@ -1,0 +1,21 @@
+{
+    "Timestamp": "Timestamp",
+    "귀하의 나이는 어떻게 되십니까?": "Age Group",
+    "귀하의 성별은 무엇입니까?": "Gender",
+    "귀하의 최종 학력은 무엇입니까?": "Education Level",
+    "귀하의 직업은 무엇입니까?": "Occupation",
+    "일주일에 평균 며칠 동안 적어도 30분 이상 운동을 하십니까?": "Exercise Days/Week",
+    "하루 평균 스마트폰, 노트북, TV 등 전자기기를 사용하는 시간이 얼마나 됩니까?": "Device Usage (hrs/day)",
+    "자기 전 전화/컴퓨터를 보는 시간이 일반적으로 얼마나 됩니까?": "Screen Time Before Sleep",
+    "(선택 사항) 키는 센티미터로 몇이에요?": "Height (cm)",
+    "(선택 사항) 몸무게는 킬로그램으로 몇이에요?": "Weight (kg)",
+    "보통 밤 몇 시에 잠자리에 드십니까?": "Bedtime",
+    "보통 아침 몇 시에 일어나십니까? ": "Wake-up Time",
+    "보통 밤에 잠든 후 대략 얼마나 걸리십니까?": "Sleep Onset Time",
+    "일반적으로 낮잠 시간이 얼마나 됩니까?": "Nap Duration",
+    "24시간 기준 일일 평균 수면 시간이 얼마나 됩니까?": "Sleep Duration (hrs/24hr)",
+    "전체적인 수면 질을 어떻게 평가하십니까?": "Sleep Quality",
+    "아침에 자주 깨는 등 수면 장애 증상이 얼마나 자주 있습니까?": "Sleep Disturbances",
+    "수면 약을 복용하십니까?": "Sleep Medication",
+    "귀하의 이메일 주소": "Email Address"
+}

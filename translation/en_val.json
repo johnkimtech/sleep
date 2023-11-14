@@ -1,0 +1,59 @@
+{
+    "Gender": {
+        "Male": "Male",
+        "Female": "Female",
+        "Prefer not to say": "Other"
+    },
+    "Education Level": {
+        "Master's degree": "Master's",
+        "Bachelor's degree": "Bachelor's",
+        "High school": "High School",
+        "Doctoral or professional degree": "Doctorate"
+    },
+    "Occupation": {
+        "Professional/office job": "Professional/Office Worker",
+        "Student": "Student",
+        "Unemployed": "Unemployed",
+        "Service (retail, food service, etc.)": "Service",
+        "Administrative and Human Resource manager": "Professional/Office Worker"
+    },
+    "Exercise Days/Week": {
+        "1-2 days": "1-2 Days",
+        "3-4 days": "3-4 Days",
+        "0 days": "0 Days",
+        "5 or more days": "5+ Days"
+    },
+    "Device Usage (hrs/day)": {
+        "1-3 hours": "1-3 Hours",
+        "4-6 hours": "4-6 Hours",
+        "7 or more hours": "7+ Hours"
+    },
+    "Screen Time Before Sleep": {
+        "30 minutes - 1 hour": "30-60 Minutes",
+        "Less than 30 minutes": "<30 Minutes",
+        "More than 2 hours": "2+ Hours",
+        "1-2 hours": "1-2 Hours"
+    },
+    "Sleep Onset Time": {
+        "Less than 15 minutes": "<15 Minutes",
+        "30-60 minutes": "30-60 Minutes",
+        "15-30 minutes": "15-30 Minutes",
+        "More than 60 minutes": ">60 Minutes"
+    },
+    "Nap Duration": {
+        "No, I do not nap during the day": "No Nap",
+        "Yes, less than 30 minutes": "<30 mins",
+        "Yes, 30-60 minutes": "30-60 mins",
+        "Yes, 60-90 minutes": "60-90 mins",
+        "Yes, More than 90 minutes": ">90 mins"
+    },
+    "Sleep Duration (hrs/24hr)": {
+        "2-4 hours": "2-4 hours",
+        "4-6 hours": "4-6 Hours",
+        "More than 6 hours": "6+ Hours"
+    },
+    "Sleep Medication": {
+        "Yes": "Yes",
+        "No": "No"
+    }
+}

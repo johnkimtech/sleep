@@ -1,0 +1,21 @@
+{
+    "Timestamp": "Timestamp",
+    "Bạn bao nhiêu tuổi?": "Age Group",
+    "Giới tính của bạn? ": "Gender",
+    "Trình độ học vấn cao nhất của bạn? ": "Education Level",
+    "Nghề nghiệp của bạn?": "Occupation",
+    "Trung bình mỗi tuần bạn tập thể dục ít nhất 30 phút (hoặc dưới 30p nhưng cường độ cao) bao nhiêu ngày?": "Exercise Days/Week",
+    "Trung bình mỗi ngày bạn dùng các thiết bị điện tử như điện thoại thông minh, máy tính xách tay, ti vi, v.v. bao nhiêu giờ?": "Device Usage (hrs/day)",
+    "Trung bình bạn dành bao nhiêu thời gian sử dụng điện thoại/máy tính trước khi đi ngủ? ": "Screen Time Before Sleep",
+    "(Không bắt buộc) Chiều cao của bạn là bao nhiêu cm?": "Height (cm)",
+    "(Không bắt buộc) Cân nặng của bạn là bao nhiêu kg?": "Weight (kg)",
+    "Thông thường bạn đi ngủ vào lúc mấy giờ tối?": "Bedtime",
+    "Thông thường bạn thức dậy vào lúc mấy giờ sáng?": "Wake-up Time",
+    "Thông thường bạn mất khoảng bao lâu để đi vào giấc ngủ đêm?": "Sleep Onset Time",
+    "Thông thường giấc ngủ trưa của bạn kéo dài bao lâu?": "Nap Duration",
+    "Trung bình mỗi ngày bạn ngủ bao nhiêu giờ trong một ngày (24 giờ)?": "Sleep Duration (hrs/24hr)",
+    "Bạn đánh giá chất lượng giấc ngủ chung của mình như thế nào?": "Sleep Quality",
+    "Giấc ngủ của bạn có hay bị gián đoạn (vd: thức giấc nửa đêm, ngủ không yên) khong?": "Sleep Disturbances",
+    "Bạn có sử dụng bất kỳ loại thuốc nào để hỗ trợ giấc ngủ không?": "Sleep Medication",
+    "Địa chỉ email của bạn": "Email Address"
+}

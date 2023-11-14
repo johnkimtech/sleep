@@ -1,0 +1,47 @@
+{
+    "Age Group": {
+        "16-24": "16-24"
+    },
+    "Gender": {
+        "여성": "Female"
+    },
+    "Education Level": {
+        "고등학교 졸업": "High School"
+    },
+    "Occupation": {
+        "학생": "Student"
+    },
+    "Exercise Days/Week": {
+        "1-2일": "1-2 Days"
+    },
+    "Device Usage (hrs/day)": {
+        "7시간 이상": "7+ Hours"
+    },
+    "Screen Time Before Sleep": {
+        "1-2시간": "1-2 Hours"
+    },
+    "Bedtime": {
+        "01:00": "01:00"
+    },
+    "Wake-up Time": {
+        "08:30": "08:30"
+    },
+    "Sleep Onset Time": {
+        "15분 미만": "<15 Minutes"
+    },
+    "Nap Duration": {
+        "낮잠 안 잡니다": "No Nap"
+    },
+    "Sleep Duration (hrs/24hr)": {
+        "6시간 초과": "6+ Hours"
+    },
+    "Sleep Quality": {
+        "4": "4"
+    },
+    "Sleep Disturbances": {
+        "가끔": "Sometimes"
+    },
+    "Sleep Medication": {
+        "아니오": "No"
+    }
+}

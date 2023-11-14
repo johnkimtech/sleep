@@ -1,0 +1,21 @@
+{
+    "Timestamp": "Timestamp",
+    "What is your age group?": "Age Group",
+    "What is your gender?": "Gender",
+    "What is the highest level of education you have completed?": "Education Level",
+    "Which category best describes your occupation?": "Occupation",
+    "On average, how many days per week do you exercise for at least 30 (or under 30 mins but high intensity) minutes? ": "Exercise Days/Week",
+    "On average, how many hours per day do you use electronic devices such as smartphones, laptops, televisions, etc.? ": "Device Usage (hrs/day)",
+    "On average, how much time do you usually spend on phone / computers before sleep?": "Screen Time Before Sleep",
+    "(Optional) What is your height in centimeters?": "Height (cm)",
+    "(Optional) What is your weight in kilograms?": "Weight (kg)",
+    "On average, what time do you typically go to bed at night?": "Bedtime",
+    "On average, what time do you typically wake up in the morning?": "Wake-up Time",
+    "On average, how long does it take you to fall asleep at night?": "Sleep Onset Time",
+    "On average, how long is your typical daytime nap?": "Nap Duration",
+    "On average, how many hours do you sleep per 24-hour period?": "Sleep Duration (hrs/24hr)",
+    "How would you rate your overall sleep quality?": "Sleep Quality",
+    "How often do you experience sleep disturbances such as waking up during the night or having restless sleep?": "Sleep Disturbances",
+    "Do you take any medication to help you sleep?": "Sleep Medication",
+    "Your email address": "Email Address"
+}
