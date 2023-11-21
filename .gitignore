@@ -163,3 +163,4 @@ cython_debug/
 !all.csv
 .DS_Store
 .~lock*#
+*xls
