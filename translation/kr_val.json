@@ -35,9 +35,6 @@
     "Sleep Duration (hrs/24hr)": {
         "6시간 초과": "6+ Hours"
     },
-    "Sleep Quality": {
-        "4": "4"
-    },
     "Sleep Disturbances": {
         "가끔": "Sometimes"
     },
