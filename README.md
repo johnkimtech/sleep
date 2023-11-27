@@ -91,8 +91,8 @@ At present, our team has successfully completed the data collection phase. We ar
     - Choices: "Yes", "No".
 
 18. **Language**
-    - Original question: Not applicable. This column is used to indicate the language in which the survey was conducted.
-    - Choices: Language names, e.g., "English", "Korean", "Vietnamese", etc.
+
+    The survey was available in multiple languages. This field indicates which version of survey did the respondent took part in.
 
 
 
