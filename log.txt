@@ -1,0 +1,2 @@
+BEWARE: your OS is not officially supported by Playwright; downloading fallback build for ubuntu22.04-x64.
+BEWARE: your OS is not officially supported by Playwright; downloading fallback build for ubuntu22.04-x64.

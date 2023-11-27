@@ -22,7 +22,7 @@ Timestamp,Age Group,Gender,Education Level,Occupation,Exercise Days/Week,Device 
 2023/11/07 8:56:34 PM GMT+9,25-34,Male,Master's,Student,1-2 Days,4-6 Hours,30-60 Minutes,180.0,70.0,01:00,05:00,>60 Minutes,No Nap,4-6 Hours,2,Sometimes,No,English,21.6,4.0
 2023/11/07 9:47:14 PM GMT+9,25-34,Male,Bachelor's,Student,5+ Days,7+ Hours,2+ Hours,167.5,66.0,04:00,23:00,30-60 Minutes,<30 mins,6+ Hours,2,Frequently,Yes,English,23.5,
 2023/11/07 10:06:46 PM GMT+9,25-34,Male,Master's,Professional/Office Worker,1-2 Days,1-3 Hours,30-60 Minutes,170.0,100.0,23:00,07:00,30-60 Minutes,<30 mins,6+ Hours,4,Sometimes,No,English,34.6,8.0
-2023/11/07 10:22:45 PM GMT+9,16-24,Male,Bachelor's,Student,3-4 Days,,30-60 Minutes,,60.0,19:23,19:20,15-30 Minutes,<30 mins,4-6 Hours,2,Sometimes,Yes,English,,
+2023/11/07 10:22:45 PM GMT+9,16-24,Male,Bachelor's,Student,3-4 Days,<1 Hours,30-60 Minutes,,60.0,19:23,19:20,15-30 Minutes,<30 mins,4-6 Hours,2,Sometimes,Yes,English,,
 2023/11/07 10:40:05 PM GMT+9,25-34,Male,Master's,Student,1-2 Days,7+ Hours,2+ Hours,160.0,64.0,01:00,09:00,<15 Minutes,No Nap,4-6 Hours,3,Never,No,English,25.0,8.0
 2023/11/08 2:50:05 AM GMT+9,25-34,Male,Master's,Professional/Office Worker,3-4 Days,4-6 Hours,30-60 Minutes,172.0,68.0,23:00,07:30,30-60 Minutes,No Nap,6+ Hours,2,Frequently,No,English,23.0,8.5
 2023/11/08 8:06:42 AM GMT+9,25-34,Male,Doctorate,Professional/Office Worker,3-4 Days,4-6 Hours,2+ Hours,172.0,64.0,00:30,07:30,<15 Minutes,No Nap,6+ Hours,3,Sometimes,No,English,21.6,7.0
