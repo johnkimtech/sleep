@@ -8,7 +8,7 @@ Welcome to the DreamHarmony Sleep Survey repository! This project is an initiati
     - Survey Form: https://forms.gle/urrj3PS4q1TbTSMeA
 - Data Preprocessing:
     - Jupyter: https://github.com/johnkimtech/sleep/blob/main/data_prep.ipynb
-- Descriptive Statistics:
+- Descriptive Statistics & Visualization:
     - PDF: https://github.com/johnkimtech/sleep/blob/main/desc_stat_visualize.pdf
     - Jupyter: https://github.com/johnkimtech/sleep/blob/main/desc_stat_visualize.ipynb
 
