@@ -3,6 +3,15 @@
 ## Introduction
 Welcome to the DreamHarmony Sleep Survey repository! This project is an initiative by the research team at the University of Science and Technology in Korea, focusing on a comprehensive study of sleep patterns and lifestyle habits.
 
+### Important Links:
+- Data Collection:
+    - Survey Form: https://forms.gle/urrj3PS4q1TbTSMeA
+- Data Preprocessing:
+    - Jupyter: https://github.com/johnkimtech/sleep/blob/main/data_prep.ipynb
+- Descriptive Statistics:
+    - PDF: https://github.com/johnkimtech/sleep/blob/main/desc_stat_visualize.pdf
+    - Jupyter: https://github.com/johnkimtech/sleep/blob/main/desc_stat_visualize.ipynb
+
 ## About the Survey
 The DreamHarmony Sleep Survey has been conducted with the goal of delving into the various factors that influence sleep quality and patterns. Our aim is not only to understand these factors but also to discover insights that could lead to enhancing sleep quality, duration, and overall life satisfaction. The findings from this survey are expected to contribute significantly to our understanding of sleep and its impact on daily life.
 
