@@ -43,10 +43,10 @@
     },
     "Nap Duration": {
         "No, I do not nap during the day": "No Nap",
-        "Yes, less than 30 minutes": "<30 mins",
-        "Yes, 30-60 minutes": "30-60 mins",
-        "Yes, 60-90 minutes": "60-90 mins",
-        "Yes, More than 90 minutes": ">90 mins"
+        "Yes, less than 30 minutes": "<30 Minutes",
+        "Yes, 30-60 minutes": "30-60 Minutes",
+        "Yes, 60-90 minutes": "60-90 Minutes",
+        "Yes, More than 90 minutes": ">90 Minutes"
     },
     "Sleep Duration (hrs/24hr)": {
         "2-4 hours": "2-4 hours",
