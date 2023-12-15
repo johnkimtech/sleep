@@ -12,42 +12,81 @@
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
 \bibliographystyle{IEEEtran}
-\title{DreamHarmony: Unveiling Sleep Patterns through Lifestyle Modeling and Predictive Analytics
+\title{\includegraphics[width=5cm]{images/ust.png} \linebreak DreamHarmony: Unveiling Sleep Patterns through Lifestyle Modeling and Predictive Analytics
 }
 
 
-\author{\IEEEauthorblockN{Hoang Q. Nguyen}
-\and
-\IEEEauthorblockN{Md Mahmudul Hassan}
-\IEEEauthorblockA{\textit{University of Science and Technology} \\
-Seoul, South Korea}
-\and
-\IEEEauthorblockN{Solomon Rukundo}
+\author{\IEEEauthorblockN{Hoang Q. Nguyen\IEEEauthorrefmark{1}\IEEEauthorrefmark{3}, Md Mahmudul Hassan\IEEEauthorrefmark{1}\IEEEauthorrefmark{3}, Solomon Rukundo\IEEEauthorrefmark{2}\IEEEauthorrefmark{3}}
+    \IEEEauthorblockA{\IEEEauthorrefmark{1} Korea Institute of Science and Technology}
+    \IEEEauthorblockA{\IEEEauthorrefmark{2} Korea Research Institute of Standards and Science}
+    \IEEEauthorblockA{\IEEEauthorrefmark{3} Korea National University of Science and Technology (UST)}
 }
-
 \maketitle
 
 \begin{abstract}
-\cite{lithuanian}
+    This study investigates how daily habits like exercise and technology use are related to sleep quality, focusing on associated stress and heart health. After careful data preparation, we used statistical methods, including Pearson\cite{pearson} and Spearman correlations\cite{spearman}, to identify which lifestyle factors are most connected to good or poor sleep. We then built various mathematical models, such as linear regression and decision trees, to predict sleep quality based on these factors. Our results show that some daily activities have a strong link to how well people sleep, and our models can explain a significant part of this link. These findings could help guide recommendations for improving sleep based on personal habits.
 \end{abstract}
 
 \begin{IEEEkeywords}
-big data, sleep, health, lifestyle
+    big data, sleep, health, lifestyle, machine learning, support vector machine
 \end{IEEEkeywords}
 
 \section{Introduction}
-\section{Data}
+The interplay between lifestyle and sleep quality is an increasingly pertinent subject in the realm of public health. To explore this intricate relationship, we embarked on a comprehensive data collection campaign, developing a structured survey that captures a wide array of lifestyle variables alongside sleep metrics. The survey's design allowed for the nuanced capture of daily routines, technological interactions, exercise habits, and their temporal association with sleep patterns.
+
+Post-collection, data processing commenced with rigorous cleaning techniques to ensure integrity and analytical viability. Our initial exploratory analysis hinged on the construction of a correlation matrix heatmap, which served as a visual aid to discern potential relationships between variables. This graphical representation provided the preliminary clues necessary for subsequent hypothesis formulation.
+
+Armed with hypotheses, we delved into a variety of statistical tests. Spearman's rank correlation offered insights into monotonic relationships, while Pearson's correlation assessed linear dependencies. For categorical data, the Chi-squared test\cite{chi} evaluated associations between discrete variables. These statistical methodologies were pivotal in distilling the factors most relevant to sleep quality.
+
+The culmination of our hypothesis testing informed the selection of variables for model fitting. We implemented a gamut of machine learning models, including, but not limited to, regression analyses, decision trees, and support vector machines. Each model was rigorously evaluated to determine its predictive power and relevance to our study.
+
+Our contributions through this research are multifaceted. Initially, we developed a foundational survey meticulously engineered to assess sleep and lifestyle variables. Subsequently, we discerned pivotal factors that influence sleep quality by leveraging statistical analysis and hypothesis testing. Furthermore, we harnessed machine learning algorithms to construct models based on these factors. Our study establishes a framework for future exploration, highlighting the necessity for continuous data accumulation to refine and augment model efficacy. We invite researchers and the public alike to contribute to our ongoing work (available on GitHub\footnotemark) through feedback and new applications of our findings.
+\footnotetext{\url{https://github.com/johnkimtech/sleep}}
+
+
+
+\section{Related Work}
+A large Japanese cross-sectional study (n = 30,000) found that 28\% slept less than 6 hours per night and 65\% slept less than 7 hours per night despite 80\% claiming adequate sleep \cite{lifestyleinfluence}. Logistic regression identified short sleep duration (\textless 6 hours) as associated with being female, younger age, urban living, unemployment, poor health, lack of exercise, and irregular eating \cite{lifestyleinfluence}. A review of Asian literature linked insufficient sleep to high stress, high BMI/obesity, and depression \cite{immune}. A study of Lithuanian university students (n = 405) found poor sleep quality, especially among medical students, to be associated with high academic demands, anxiety, limited leisure time, and academic dissatisfaction \cite{lithua}. These findings suggest that interventions targeting stress, leisure time, exercise, urban planning, mental health, and other lifestyle factors could potentially improve sleep \cite{lifestyleinfluence,lithua}. However, existing research lacks exploration of newer lifestyle factors, such as the impact of technology and social media on sleep habits. Future research is needed to investigate how emerging habits like nighttime electronic device use, pre-sleep social media engagement, and internet overuse might contribute to sleep disturbances.
+
+\section{Data Acquition \& Preprocessing}
+The DreamHarmony Sleep Survey was an integral part of our study, designed to explore the multifaceted relationship between lifestyle habits and sleep quality. To capture a diverse set of responses, the survey was made available in multiple languages including Korean, English, Vietnamese, and Bengali.
+
+\subsection{Data collection through online survey}
+The DreamHarmony Sleep Survey was meticulously designed to delve into the myriad factors affecting sleep quality and patterns. This comprehensive survey aimed to unravel the complex interplay between lifestyle habits and sleep, potentially leading to enhancements in sleep quality and overall life satisfaction.
+\subsubsection*{Survey Structure and Distribution}
+
+The survey was structured into distinct sections: demographics, lifestyle, and sleep habits. It was distributed via Google Forms\cite{dhsurvey} through the authors' social networks, encompassing friends, colleagues, and family members. While this method facilitated rapid data collection, we acknowledge the potential for bias and sample imbalance due to the nature of the distribution channels.
+
+\subsubsection*{Demographics}
+
+Participants were queried about their age, gender, education level, and occupation. This demographic information was crucial to understanding the contextual background of each respondent.
+
+\subsubsection*{Lifestyle and Sleep Habits}
+
+The lifestyle section encompassed questions regarding exercise frequency, device usage, and screen time before sleep. In the sleep habits section, we focused on gathering detailed information about participants' sleep patterns. Key questions included:
+\begin{itemize}
+    \item\textbf{Bedtime and Wake-up Time}: These questions helped calculate the actual duration of nighttime sleep, a vital metric for assessing sleep quality.
+    \item\textbf{Sleep Quality}: Respondents rated their overall sleep quality, providing us with a subjective assessment of their sleep experience.
+    \item\textbf{Sleep Onset}: We inquired about the time it typically takes for respondents to fall asleep, aiming to understand sleep onset difficulties.
+    \item\textbf{Sleep Medication}: This question ascertained whether participants use any medication to aid their sleep, which is indicative of sleep quality issues.
+    \item\textbf{Sleep Disturbances}: The frequency of disturbances such as waking up during the night or experiencing restless sleep was also captured.
+\end{itemize}
+\subsubsection*{Contributions}
+Our survey, though limited by its distribution method, provides valuable insights into sleep quality and its influencing factors. The subsequent statistical and machine learning analyses contribute to a nuanced understanding of sleep dynamics, laying the groundwork for future research in this field.
+\subsection{Preprocessing: Translation and Aggregation}
 \section{Analysis}
 \section{Hypothesis Testing}
 \section{Modeling}
 \section{Conclusion}
 \section{Future Work}
 
+
+\section{Related work}
 \section*{Acknowledgment}
-Thanks:
-1. Family
-2. Professor
-3. team mates
+% Thanks:
+% 1. Family
+% 2. Professor
+% 3. team mates
 
 \bibliography{references}
 
