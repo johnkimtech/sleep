@@ -8,6 +8,7 @@
 \usepackage{graphicx}
 \usepackage{textcomp}
 \usepackage{xcolor}
+
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
@@ -15,13 +16,15 @@
 \title{\includegraphics[width=5cm]{images/ust.png}\linebreak DreamHarmony: Unveiling Sleep Patterns through Lifestyle Modeling and Predictive Analytics
 }
 
-
 \author{\IEEEauthorblockN{Hoang Q. Nguyen\IEEEauthorrefmark{1}\IEEEauthorrefmark{3}, Md Mahmudul Hassan\IEEEauthorrefmark{1}\IEEEauthorrefmark{3}, Solomon Rukundo\IEEEauthorrefmark{2}\IEEEauthorrefmark{3}}
     \IEEEauthorblockA{\IEEEauthorrefmark{1} Korea Institute of Science and Technology}
     \IEEEauthorblockA{\IEEEauthorrefmark{2} Korea Research Institute of Standards and Science}
     \IEEEauthorblockA{\IEEEauthorrefmark{3} Korea National University of Science and Technology (UST)}
 }
+
 \maketitle
+\thispagestyle{plain} % disable this for paper publication
+\pagestyle{plain} % disable this for paper publication
 
 \begin{abstract}
     This study investigates how daily habits like exercise and technology use are related to sleep quality. After careful data preparation, we used statistical methods, including Pearson\cite{pearson} and Spearman correlations\cite{spearman}, to identify which lifestyle factors are most connected to good or poor sleep, in terms of duration and quality. We then built various mathematical models, such as linear regression and decision trees, to predict sleep quality based on these factors. Our results show that some daily activities have a strong link to how well people sleep, and our models can explain a significant part of this link. These findings could help guide recommendations for improving sleep based on personal habits.
@@ -417,14 +420,83 @@ Our statistical analysis at a significance level of 0.05 has led to several note
 
 In conclusion, while certain factors like sleep disturbances and sleep onset time show clear correlations with sleep quality, other factors such as exercise frequency and nap duration present more complex relationships that require further exploration. The results underscore the multifaceted nature of sleep and its susceptibility to a range of influences, both clear and subtle.
 
-
 \section{Modeling}
+
+\subsection*{Overview}
+In this modeling section, we focus on using variables that exhibited high correlations in our hypothesis testing, namely \textbf{Nap Duration}, \textbf{Exercise Days/Week}, \textbf{Sleep Disturbances}, and \textbf{Age Group}. These variables, identified as significant predictors of sleep patterns, are employed in various machine learning models to predict night sleep duration and sleep quality. The subsequent subsections detail the performance of each model, providing an analysis and comparison of their effectiveness in these prediction tasks.
+
+
+\subsection{Predicting Night Sleep Duration}
+The task of predicting night sleep duration was approached with multiple regression models. The models' performances were evaluated based on Mean Squared Error (MSE) and R-squared (R\(^2\)) scores. 
+
+\begin{table}[ht]
+\centering
+\caption{Regression Models: Performance Metrics for Predicting Night Sleep Duration}
+\label{tab:regression-models}
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{Model} & \textbf{Mean Squared Error} & \textbf{R\(^2\) Score} \\
+\hline
+Linear Regression & 1.3389 & 0.2457 \\
+Decision Tree Regressor & 3.4192 & -0.9263 \\
+K-Nearest Neighbors & 1.6241 & 0.0850 \\
+Support Vector Machine & 1.5909 & 0.1037 \\
+\hline
+\end{tabular}
+\end{table}
+
+The Linear Regression model showed the best performance with the lowest MSE, indicating higher predictive accuracy, and a modest R\(^2\) score, suggesting a reasonable fit to the data. In contrast, the Decision Tree Regressor performed poorly, with a high MSE and a negative R\(^2\) score, indicating overfitting. KNN and SVM had similar performance levels, but both were less effective than Linear Regression.
+
+\subsection{Predicting Sleep Quality}
+For sleep quality, classification models including Multiclass Logistic Regression, Decision Tree Classifier, Random Forest, KNN, and SVM were evaluated based on accuracy and weighted average F1-score.
+
+\begin{table}[ht]
+\centering
+\caption{Classification Models: Performance Metrics for Predicting Sleep Quality}
+\label{tab:classification-models}
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{Model} & \textbf{Accuracy} & \textbf{Weighted Avg F1-Score} \\
+\hline
+Multiclass Logistic Regression & 0.32 & 0.28 \\
+Decision Tree Classifier & 0.55 & 0.62 \\
+Random Forest & 0.55 & 0.62 \\
+K-Nearest Neighbors & 0.50 & 0.47 \\
+SVM & 0.59 & 0.52 \\
+\hline
+\end{tabular}
+\end{table}
+
+In predicting sleep quality, the SVM model emerged as the most accurate with the highest overall accuracy and F1-score. Both Decision Tree and Random Forest models showed commendable performance but were slightly less effective than SVM. The Multiclass Logistic Regression model, however, had the lowest accuracy and F1-score, indicating its limited suitability for this particular task.
+
+\subsection*{Conclusion}
+The modeling analysis indicates that for predicting night sleep duration, Linear Regression provides the most reliable results, while for sleep quality, SVM is the most effective. Although some models like the Decision Tree Regressor and Multiclass Logistic Regression showed limitations in predictive power, they still contribute valuable insights. Overall, each model's performance highlights the complexity of predicting sleep-related outcomes and underscores the potential for enhanced model development with more comprehensive data.
+
 \section{Conclusion}
-\section{Future Work}
+
+Our study embarked on an in-depth examination of the complex interplay between various lifestyle factors and their impacts on sleep quality and duration. The significant correlations identified through hypothesis testing between sleep disturbances, age, exercise frequency, nap duration, and sleep onset time with sleep quality and duration highlight the intricate nature of sleep dynamics.
+
+In the modeling phase, we utilized key variables, drawing on findings from hypothesis testing, to predict night sleep duration and sleep quality using various machine learning techniques. The regression models, especially Linear Regression, showed promising results in predicting night sleep duration, whereas the SVM classification model proved most accurate in predicting sleep quality. Nevertheless, these models demonstrated certain limitations, indicating areas for further refinement in future research.
+
+This research contributes valuable empirical insights into the factors influencing sleep, suggesting that targeted lifestyle modifications could enhance sleep quality and duration. The study also underscores the potential of machine learning in sleep research, despite the challenges posed by the complexity of sleep patterns.
+
+However, our study faced several limitations:
+\begin{itemize}
+    \item The survey distribution mainly among friends and colleagues led to imbalanced data, potentially skewing the representation of broader populations.
+    \item Time constraints limited our ability to fine-tune the models for optimal performance, which might have yielded more nuanced insights.
+    \item Our limited expertise in the biological aspects of sleep may have constrained our ability to fully interpret the complex interactions between various factors and sleep patterns.
+\end{itemize}
+
+In conclusion, while providing valuable insights and contributing to the body of knowledge on sleep health, our study also paves the way for future research. It highlights the multifaceted influences on sleep and the importance of sophisticated analytical tools in understanding these complexities. The limitations noted herein can serve as guideposts for future studies, aiming to enhance our understanding and ultimately improve sleep health and overall well-being.
 
 
-\section{Related work}
-\section*{Acknowledgment}
+\subsection*{Future Work}
+% future work
+% > better survey: consult with health professionals and refer from more well established studies in helathy and sleep to discover new and important variables
+% > solving data imbalance: besides distributing survyes through the authors' friend and college circles, the future survye should be conducted on a wider range of participants for class balance
+% > improving models: given more time and effort in modellings, finetuning current best models could boost predictive powers significantly. also, the authors can consider using different models and methods such as clustering, or even neural works
+
+\subsection*{Acknowledgment}
 % Thanks:
 % 1. Family
 % 2. Professor
