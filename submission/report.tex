@@ -12,7 +12,7 @@
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
 \bibliographystyle{IEEEtran}
-\title{\includegraphics[width=3.2cm]{images/kist.png}\includegraphics[width=5cm]{images/ust.png}\includegraphics[width=3cm]{images/kriss.png} \linebreak DreamHarmony: Unveiling Sleep Patterns through Lifestyle Modeling and Predictive Analytics
+\title{\includegraphics[width=5cm]{images/ust.png}\linebreak DreamHarmony: Unveiling Sleep Patterns through Lifestyle Modeling and Predictive Analytics
 }
 
 
@@ -73,8 +73,90 @@ The lifestyle section encompassed questions regarding exercise frequency, device
 \end{itemize}
 \subsubsection*{Contributions}
 Our survey, though limited by its distribution method, provides valuable insights into sleep quality and its influencing factors. The subsequent statistical and machine learning analyses contribute to a nuanced understanding of sleep dynamics, laying the groundwork for future research in this field.
-\subsection{Preprocessing: Translation and Aggregation}
+\subsection{Preprocessing: Translation, Merging, and Cleanup}
+\subsubsection*{Translation}
+To harness the collected data effectively in the subsequent stages of analysis, it was imperative to amalgamate the survey responses from all language versions into a single dataframe. This posed significant challenges, as the survey questions and responses were presented in various languages, and even the English version contained verbose questions and answers. To address these issues, we:
+
+\begin{enumerate}
+  \item Constructed a JSON file containing a translation mapping from the original column headers to abbreviated column headers in English.
+  \item Utilized the \texttt{rename} function from the \texttt{pandas} library to update the dataframe with the new headers \cite{dfrename}.
+\end{enumerate}
+
+For the translation of cell values, a similar approach was employed, where JSON files served as the translation mapping. These mappings were then applied to the dataframe using the \texttt{map} function to convert the cell values into concise English terms \cite{dfmap}.
+
+\subsubsection*{Merging \& Cleanup}
+Once translations for both headers and cell values were standardized, we employed the \texttt{concat} function from \texttt{pandas} to stack the individual dataframes from each language version into a unified dataframe \cite{pdconcat}. However, this merged dataset contained several inconsistencies, including:
+
+\begin{itemize}
+  \item Heights recorded as less than 100cm, primarily in the Bengali version of the survey, where respondents preferred inches to centimeters. For these cases, heights were converted from inches to centimeters.
+  \item Respondents' confusion between 24-hour and 12-hour time formats, resulting in miscalculations of sleep duration, with some reported durations nearing 20 hours per day. We addressed this by filtering out erroneous values and correcting the time format.
+\end{itemize}
+Furthermore, actual night sleep duration was calculated from the 'Bedtime' and 'Wake-up Time' responses. For respondents providing height and weight, Body Mass Index (BMI) was computed, offering additional metrics pivotal to the analysis. Following these corrections, the dataset was ready for subsequent stages of examination.
 \section{Analysis}
+\subsubsection*{Descriptive statistics}
+\begin{table}[htbp]
+    \centering
+    \caption{Descriptive statistics of the sleep study data}
+    \label{tab:sleep_data1}
+    \begin{tabular}{lrrrrr}
+    \hline
+    & Height (cm) & Weight (kg) & BMI & Sleep Quality & Night Sleep\footnotemark \\ \hline
+    count & 83 & 92 & 80 & 108 & 105 \\
+    mean & 165.31 & 67.42 & 24.55 & 3.44 & 7.04 \\
+    std & 8.32 & 12.80 & 4.25 & 0.82 & 1.37 \\
+    min & 150.00 & 43.00 & 18.52 & 2.00 & 1.67 \\
+    25\% & 160.00 & 59.80 & 22.02 & 3.00 & 6.50 \\
+    50\% & 167.00 & 68.00 & 24.69 & 3.00 & 7.00 \\
+    75\% & 171.00 & 75.00 & 27.31 & 4.00 & 8.00 \\
+    max & 185.00 & 100.00 & 35.85 & 5.00 & 9.75 \\
+    \hline
+    \end{tabular}
+\end{table}
+\footnotetext{Calculated night time sleep based on Bedtime and Wake-up time}
+
+\begin{table*}
+    \centering
+    \caption{Descriptive statistics of sleep study participants}
+    \label{tab:sleep_data2}
+    \begin{tabular}{lrrrrr}
+    \hline
+    & Age Group & Gender & Education Level & Occupation & Exercise (days/week) \\ \hline
+    count & 108 & 108 & 108 & 108 & 108 \\
+    unique & 5 & 3 & 4 & 7 & 4 \\
+    top & 25-34 & Male & Master's & Student & 1-2 Days \\
+    freq & 72 & 67 & 47 & 47 & 43 \\ \hline
+    & Device Usage (hrs/day) & Screen Time Before Sleep (hrs/min) & Sleep Onset (min) & Bedtime & Wake-up Time \\ \hline
+    count & 108 & 108 & 108 & 104 & 108 \\
+    unique & 4 & 4 & 4 & 18 & 20 \\
+    top & 7+ Hours & 30-60mins & 15-30mins & 23:00 & 07:00 \\
+    freq & 43 & 45 & 55 & 24 & 18 \\ \hline
+
+    & Nap Duration (min) & Sleep Duration (hrs/24hr) & Sleep Disturbances & Sleep Medication & Language \\ \hline
+    count & 108 & 54 & 43 & 32 & 108 \\
+    unique & 5 & 7 & 3 & 2 & 4 \\
+    top & 15-30mins & 7-8hrs & Frequent & No & English \\
+    freq & 55 & 23 & 18 & 14 & 108 \\ \hline
+
+    \end{tabular}
+    \end{table*}
+    
+
+As shown in Table~\ref{tab:sleep_data1} and \ref{tab:sleep_data2}:
+\begin{itemize}
+    \item \textbf{Sleep quality}: Respondents rated their sleep quality around 3 on a 5-point scale, indicating moderate quality.
+    \item \textbf{BMI}: The average Body Mass Index (BMI) is around 23.55, ranging from 16.5 to 39.4.
+    \item \textbf{Night sleep duration}: The average night sleep duration is around 7 hours, with a wide range of 1.67 to 9.75 hours.\item \textbf{Age Group}: The most common age group among respondents is 25-34.
+    \item \textbf{Gender}: A slightly higher number of male respondents compared to females.
+    \item \textbf{Education Level}: The majority of respondents have a Master's degree.
+    \item \textbf{Occupation}: Many respondents are students.
+    \item \textbf{Exercise Days/Week}: '1-2 Days' is the most common response for exercise frequency.
+    \item \textbf{Device Usage (hrs/day)}: A large portion of respondents use devices for '7+ Hours' per day.
+    \item \textbf{Screen Time Before Sleep}: '30-60 Minutes' is the most common duration for screen time before sleep.
+    \item \textbf{Sleep Disturbances}: 'Rarely' is the most frequent response, indicating that most respondents rarely experience sleep disturbances.
+    \item \textbf{Sleep Medication}: The majority of respondents do not use sleep medication.
+    \item \textbf{Language}: English is the most common language among respondents.
+
+\end{itemize}    
 \section{Hypothesis Testing}
 \section{Modeling}
 \section{Conclusion}
