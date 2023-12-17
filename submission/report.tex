@@ -81,8 +81,8 @@ Our survey, though limited by its distribution method, provides valuable insight
 To harness the collected data effectively in the subsequent stages of analysis, it was imperative to amalgamate the survey responses from all language versions into a single dataframe. This posed significant challenges, as the survey questions and responses were presented in various languages, and even the English version contained verbose questions and answers. To address these issues, we:
 
 \begin{enumerate}
-  \item Constructed a JSON file containing a translation mapping from the original column headers to abbreviated column headers in English.
-  \item Utilized the \texttt{rename} function from the \texttt{pandas} library to update the dataframe with the new headers \cite{dfrename}.
+    \item Constructed a JSON file containing a translation mapping from the original column headers to abbreviated column headers in English.
+    \item Utilized the \texttt{rename} function from the \texttt{pandas} library to update the dataframe with the new headers \cite{dfrename}.
 \end{enumerate}
 
 For the translation of cell values, a similar approach was employed, where JSON files served as the translation mapping. These mappings were then applied to the dataframe using the \texttt{map} function to convert the cell values into concise English terms \cite{dfmap}.
@@ -91,8 +91,8 @@ For the translation of cell values, a similar approach was employed, where JSON 
 Once translations for both headers and cell values were standardized, we employed the \texttt{concat} function from \texttt{pandas} to stack the individual dataframes from each language version into a unified dataframe \cite{pdconcat}. However, this merged dataset contained several inconsistencies, including:
 
 \begin{itemize}
-  \item Heights recorded as less than 100cm, primarily in the Bengali version of the survey, where respondents preferred inches to centimeters. For these cases, heights were converted from inches to centimeters.
-  \item Respondents' confusion between 24-hour and 12-hour time formats, resulting in miscalculations of sleep duration, with some reported durations nearing 20 hours per day. We addressed this by filtering out erroneous values and correcting the time format.
+    \item Heights recorded as less than 100cm, primarily in the Bengali version of the survey, where respondents preferred inches to centimeters. For these cases, heights were converted from inches to centimeters.
+    \item Respondents' confusion between 24-hour and 12-hour time formats, resulting in miscalculations of sleep duration, with some reported durations nearing 20 hours per day. We addressed this by filtering out erroneous values and correcting the time format.
 \end{itemize}
 Furthermore, actual night sleep duration was calculated from the 'Bedtime' and 'Wake-up Time' responses. For respondents providing height and weight, Body Mass Index (BMI) was computed, offering additional metrics pivotal to the analysis. Following these corrections, the dataset was ready for subsequent stages of examination.
 \section{Analysis}
@@ -102,17 +102,17 @@ Furthermore, actual night sleep duration was calculated from the 'Bedtime' and '
     \caption{Descriptive statistics of the sleep study data}
     \label{tab:sleep_data1}
     \begin{tabular}{lrrrrr}
-    \hline
-    & Height (cm) & Weight (kg) & BMI & Sleep Quality & Night Sleep\footnotemark \\ \hline
-    count & 83 & 92 & 80 & 108 & 105 \\
-    mean & 165.31 & 67.42 & 24.55 & 3.44 & 7.04 \\
-    std & 8.32 & 12.80 & 4.25 & 0.82 & 1.37 \\
-    min & 150.00 & 43.00 & 18.52 & 2.00 & 1.67 \\ \hline
-    25\% & 160.00 & 59.80 & 22.02 & 3.00 & 6.50 \\
-    50\% & 167.00 & 68.00 & 24.69 & 3.00 & 7.00 \\
-    75\% & 171.00 & 75.00 & 27.31 & 4.00 & 8.00 \\
-    max & 185.00 & 100.00 & 35.85 & 5.00 & 9.75 \\
-    \hline
+        \hline
+              & Height (cm) & Weight (kg) & BMI   & Sleep Quality & Night Sleep\footnotemark \\ \hline
+        count & 83          & 92          & 80    & 108           & 105                      \\
+        mean  & 165.31      & 67.42       & 24.55 & 3.44          & 7.04                     \\
+        std   & 8.32        & 12.80       & 4.25  & 0.82          & 1.37                     \\
+        min   & 150.00      & 43.00       & 18.52 & 2.00          & 1.67                     \\ \hline
+        25\%  & 160.00      & 59.80       & 22.02 & 3.00          & 6.50                     \\
+        50\%  & 167.00      & 68.00       & 24.69 & 3.00          & 7.00                     \\
+        75\%  & 171.00      & 75.00       & 27.31 & 4.00          & 8.00                     \\
+        max   & 185.00      & 100.00      & 35.85 & 5.00          & 9.75                     \\
+        \hline
     \end{tabular}
 \end{table}
 \footnotetext{Calculated night time sleep based on Bedtime and Wake-up time}
@@ -122,27 +122,26 @@ Furthermore, actual night sleep duration was calculated from the 'Bedtime' and '
     \caption{Descriptive statistics of sleep study participants}
     \label{tab:sleep_data2}
     \begin{tabular}{lrrrrr}
-    \hline
-    & Age Group & Gender & Education Level & Occupation & Exercise (days/week) \\ \hline
-    count & 108 & 108 & 108 & 108 & 108 \\
-    unique & 5 & 3 & 4 & 7 & 4 \\
-    top & 25-34 & Male & Master's & Student & 1-2 Days \\
-    freq & 72 & 67 & 47 & 47 & 43 \\ \hline
-    & Device Usage (hrs/day) & Screen Time Before Sleep (hrs/min) & Sleep Onset (min) & Bedtime & Wake-up Time \\ \hline
-    count & 108 & 108 & 108 & 104 & 108 \\
-    unique & 4 & 4 & 4 & 18 & 20 \\
-    top & 7+ Hours & 30-60mins & 15-30mins & 23:00 & 07:00 \\
-    freq & 43 & 45 & 55 & 24 & 18 \\ \hline
+        \hline
+               & Age Group              & Gender                             & Education Level    & Occupation       & Exercise (days/week) \\ \hline
+        count  & 108                    & 108                                & 108                & 108              & 108                  \\
+        unique & 5                      & 3                                  & 4                  & 7                & 4                    \\
+        top    & 25-34                  & Male                               & Master's           & Student          & 1-2 Days             \\
+        freq   & 72                     & 67                                 & 47                 & 47               & 43                   \\ \hline
+               & Device Usage (hrs/day) & Screen Time Before Sleep (hrs/min) & Sleep Onset (min)  & Bedtime          & Wake-up Time         \\ \hline
+        count  & 108                    & 108                                & 108                & 104              & 108                  \\
+        unique & 4                      & 4                                  & 4                  & 18               & 20                   \\
+        top    & 7+ Hours               & 30-60mins                          & 15-30mins          & 23:00            & 07:00                \\
+        freq   & 43                     & 45                                 & 55                 & 24               & 18                   \\ \hline
 
-    & Nap Duration (min) & Sleep Duration (hrs/24hr) & Sleep Disturbances & Sleep Medication & Language \\ \hline
-    count & 108 & 107 & 108 & 108 & 108 \\
-    unique & 5 & 3 & 5 & 2 & 4 \\
-    top & No Nap & 6hrs+ & Rarely & No & English \\
-    freq & 61 & 64 & 48 & 48 & 68 \\ \hline
-
+               & Nap Duration (min)     & Sleep Duration (hrs/24hr)          & Sleep Disturbances & Sleep Medication & Language             \\ \hline
+        count  & 108                    & 107                                & 108                & 108              & 108                  \\
+        unique & 5                      & 3                                  & 5                  & 2                & 4                    \\
+        top    & No Nap                 & 6hrs+                              & Rarely             & No               & English              \\
+        freq   & 61                     & 64                                 & 48                 & 48               & 68                   \\ \hline
     \end{tabular}
-    \end{table*}
-    
+\end{table*}
+
 
 As shown in Table~\ref{tab:sleep_data1} and \ref{tab:sleep_data2}:
 \begin{itemize}
@@ -159,20 +158,20 @@ As shown in Table~\ref{tab:sleep_data1} and \ref{tab:sleep_data2}:
     \item \textbf{Sleep Medication}: The majority of respondents do not use sleep medication.
     \item \textbf{Language}: English is the most common language among respondents.
 
-\end{itemize}  
+\end{itemize}
 
 \subsubsection*{Distribution Analysis}
 The analysis of sleep quality and night sleep duration distributions, as depicted in Figures \ref{fig:distsleep} and \ref{fig:distsleepwm}, reveals the following insights:
 
 \begin{itemize}
-    \item \textbf{Sleep Quality Distribution:} 
-    The majority of the respondents report their sleep quality within the range of 2 to 4, with a concentration of responses at a sleep quality score of 3. Notably, a smaller proportion of participants indicate experiencing excellent sleep quality, as reflected by the fewer scores of 5.
+    \item \textbf{Sleep Quality Distribution:}
+          The majority of the respondents report their sleep quality within the range of 2 to 4, with a concentration of responses at a sleep quality score of 3. Notably, a smaller proportion of participants indicate experiencing excellent sleep quality, as reflected by the fewer scores of 5.
 
     \item \textbf{Night Sleep Duration Distribution:}
-    Observations from the histogram suggest a normal distribution of sleep duration, predominantly centered around the 7-hour mark. This finding is in line with standard sleep recommendations. Notably, the occurrences of extremely short (\textless 5 hours) or long (\textgreater 9 hours) sleep durations are relatively infrequent.
+          Observations from the histogram suggest a normal distribution of sleep duration, predominantly centered around the 7-hour mark. This finding is in line with standard sleep recommendations. Notably, the occurrences of extremely short (\textless 5 hours) or long (\textgreater 9 hours) sleep durations are relatively infrequent.
 
-    \item \textbf{Gender-Based Sleep Differences:} 
-    The boxplots in Figure \ref{fig:distsleepwm} indicate a striking similarity in sleep quality between male and female participants. Additionally, the comparison of night sleep duration across genders reveals closely aligned distributions, with minor variations primarily in the lower and upper quartiles.
+    \item \textbf{Gender-Based Sleep Differences:}
+          The boxplots in Figure \ref{fig:distsleepwm} indicate a striking similarity in sleep quality between male and female participants. Additionally, the comparison of night sleep duration across genders reveals closely aligned distributions, with minor variations primarily in the lower and upper quartiles.
 \end{itemize}
 
 These observations contribute to a nuanced understanding of the distribution patterns of sleep quality and duration among the survey participants, highlighting subtle differences and commonalities in sleep experiences.
@@ -182,95 +181,95 @@ These observations contribute to a nuanced understanding of the distribution pat
     \includegraphics[width=8cm]{images/distsleep.png}
     \caption{Distribution of Sleep Quality and Duration}
     \label{fig:distsleep}
-  \end{figure}
-  \begin{figure}[ht]
-      \centering
-      \includegraphics[width=8cm]{images/distsleepwm.png}
-      \caption{Distribution of Sleep Quality and Duration across Gender}
-      \label{fig:distsleepwm}
-    \end{figure}
+\end{figure}
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=8cm]{images/distsleepwm.png}
+    \caption{Distribution of Sleep Quality and Duration across Gender}
+    \label{fig:distsleepwm}
+\end{figure}
 
 
-    \subsubsection*{Correlation analysis}
-    The heatmap in Figure \ref{fig:corrheat} illustrates these following correlations:
-    \begin{itemize}
-        
-\item \textbf{Sleep Quality:} Strong negative correlation with Sleep Disturbances (-0.55), indicating better sleep quality is associated with fewer disturbances.
-Moderate negative correlation with Sleep Onset Time (-0.32), suggesting that quicker sleep onset is associated with better sleep quality.
+\subsubsection*{Correlation analysis}
+The heatmap in Figure \ref{fig:corrheat} illustrates these following correlations:
+\begin{itemize}
 
-\item \textbf{BMI:} Slight negative correlation with Calculated Night Sleep Duration (-0.19), suggesting that higher BMI might be slightly associated with shorter sleep duration, although the relationship is weak.
-Moderate negative correlation with Device Usage (-0.28), indicating that higher BMI is associated with less device usage.
+    \item \textbf{Sleep Quality:} Strong negative correlation with Sleep Disturbances (-0.55), indicating better sleep quality is associated with fewer disturbances.
+          Moderate negative correlation with Sleep Onset Time (-0.32), suggesting that quicker sleep onset is associated with better sleep quality.
 
-\item \textbf{Calculated Night Sleep Duration:} Negative correlation with Age Group (-0.23), indicating that older age groups might have shorter sleep duration.
-All other correlations with Calculated Night Sleep Duration are weak.
+    \item \textbf{BMI:} Slight negative correlation with Calculated Night Sleep Duration (-0.19), suggesting that higher BMI might be slightly associated with shorter sleep duration, although the relationship is weak.
+          Moderate negative correlation with Device Usage (-0.28), indicating that higher BMI is associated with less device usage.
 
-\item \textbf{Age Group:} Moderate positive correlation with BMI (0.31), suggesting that higher BMI values are more prevalent in older age groups.
+    \item \textbf{Calculated Night Sleep Duration:} Negative correlation with Age Group (-0.23), indicating that older age groups might have shorter sleep duration.
+          All other correlations with Calculated Night Sleep Duration are weak.
 
-\item \textbf{Sleep Onset Time:} No significant correlations with other variables, aside from the moderate negative correlation with Sleep Quality.
+    \item \textbf{Age Group:} Moderate positive correlation with BMI (0.31), suggesting that higher BMI values are more prevalent in older age groups.
 
-\item \textbf{Nap Duration:} Weak correlations with all other variables.
+    \item \textbf{Sleep Onset Time:} No significant correlations with other variables, aside from the moderate negative correlation with Sleep Quality.
 
-\item \textbf{Exercise Days/Week:} Slight positive correlation with Calculated Night Sleep Duration (0.22), implying that more exercise might be related to slightly longer sleep duration.
-Weak correlations with all other variables.
+    \item \textbf{Nap Duration:} Weak correlations with all other variables.
 
-\item \textbf{Sleep Disturbances:} Aside from the strong negative correlation with Sleep Quality, Sleep Disturbances show weak correlations with other variables.
+    \item \textbf{Exercise Days/Week:} Slight positive correlation with Calculated Night Sleep Duration (0.22), implying that more exercise might be related to slightly longer sleep duration.
+          Weak correlations with all other variables.
 
-\item \textbf{Device Usage (hrs/day):} Moderate negative correlation with BMI (-0.28), as previously mentioned.
-Weak correlations with all other variables.
-This heatmap indicates that while some variables are correlated, most relationships are weak. The strongest observed relationships involve sleep quality, particularly its negative correlation with sleep disturbances and sleep onset time. This suggests that variables affecting the quality of sleep have a more significant impact on sleep disturbances and the time it takes to fall asleep. The correlations involving BMI, age group, and device usage suggest demographic and behavioral patterns but are not strong enough to imply causation.
-    \end{itemize}
-    \begin{figure}[ht]
-        \centering
-        \includegraphics[width=8cm]{images/corrheat.png}
-        \caption{Correlation Heatmap between variables}
-        \label{fig:corrheat}
-      \end{figure}
+    \item \textbf{Sleep Disturbances:} Aside from the strong negative correlation with Sleep Quality, Sleep Disturbances show weak correlations with other variables.
+
+    \item \textbf{Device Usage (hrs/day):} Moderate negative correlation with BMI (-0.28), as previously mentioned.
+          Weak correlations with all other variables.
+          This heatmap indicates that while some variables are correlated, most relationships are weak. The strongest observed relationships involve sleep quality, particularly its negative correlation with sleep disturbances and sleep onset time. This suggests that variables affecting the quality of sleep have a more significant impact on sleep disturbances and the time it takes to fall asleep. The correlations involving BMI, age group, and device usage suggest demographic and behavioral patterns but are not strong enough to imply causation.
+\end{itemize}
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=8cm]{images/corrheat.png}
+    \caption{Correlation Heatmap between variables}
+    \label{fig:corrheat}
+\end{figure}
 \section{Hypothesis Testing}
 \subsection*{Overview}
 
 The observed correlations from the data analysis and visualizations suggest several hypotheses that could be explored through further analysis:
-      \begin{itemize}
+\begin{itemize}
 
-        \item \textit{Impact of Sleep Disturbances on Quality:} Given the strong negative correlation between sleep disturbances and quality, we can hypothesize that increased sleep disturbances are likely to negatively impact the quality of sleep.
+    \item \textit{Impact of Sleep Disturbances on Quality:} Given the strong negative correlation between sleep disturbances and quality, we can hypothesize that increased sleep disturbances are likely to negatively impact the quality of sleep.
 
-        \item \textit{Age in Relation to Sleep Duration:} The negative correlation between age and calculated night sleep duration leads to the hypothesis that sleep duration may decrease with age.
-        
-        \item \textit{Relationship Between Sleep Onset Time and Quality:} The moderate negative correlation observed between sleep onset time and quality suggests that a longer time to fall asleep might be associated with poorer sleep quality.
-        
-        \item \textit{Influence of Exercise on Sleep Duration and Quality:} The slight positive correlation between exercise days per week and sleep duration hints at a potential hypothesis that increased physical activity could contribute to longer and possibly better quality sleep.
-        
-        \item \textit{Nap Duration's Effect on Nighttime Sleep Duration:} Although the correlation is weak, we could investigate whether the duration of naps has any effect on the duration of nighttime sleep.
-      \end{itemize}
-      \subsection*{Hypothesis I - Increased Sleep Disturbances Negatively Impact Sleep Quality}
-      \textit{Null Hypothesis (\(H_0\))}: The level of Sleep Disturbances has no impact on Sleep Quality.
-      
-      \textit{Alternative Hypothesis (\(H_1\))}: The level of Sleep Disturbances negatively impacts Sleep Quality.
-      
-      To investigate the relationship between sleep disturbances and sleep quality, we utilized Spearman's rank correlation due to its ability to measure monotonic relationships without assuming a linear relationship between variables, which is suitable for ordinal data. Additionally, the Chi-squared test was employed to evaluate the independence of categorical variables.
-      
-      \begin{table}[ht]
-      \centering
-      \caption{Statistical Tests for Sleep Disturbances and Sleep Quality}
-      \label{tab:hypothesis1}
-      \begin{tabular}{|c|c|c|c|}
-      \hline
-      \textbf{Test Type} & \textbf{Statistic} & \textbf{P-value} & \textbf{Conclusion} \\
-      \hline
-      Spearman's \(\rho\) & -0.453 & \(4.2 \times 10^{-7}\) & Reject \(H_0\), accept \(H_1\)
-      \\
-      \hline
-      Chi-squared & 46.03 & \(6.85 \times 10^{-6}\) & Reject \(H_0\), accept \(H_1\)
-      \\
-      \hline
-      \end{tabular}
-      \end{table}
-      The analysis of sleep disturbances and their impact on sleep quality yields significant findings. The Spearman correlation coefficient of -0.453 implies a moderate negative correlation, suggesting that increases in sleep disturbances are associated with deteriorations in sleep quality \cite{alhola2007sleep}. This relationship is statistically significant, with a p-value of \(4.2 \times 10^{-7}\), well below the alpha threshold of 0.05, leading us to reject the null hypothesis and affirm the alternative hypothesis \cite{morin2003cognitive}.
+    \item \textit{Age in Relation to Sleep Duration:} The negative correlation between age and calculated night sleep duration leads to the hypothesis that sleep duration may decrease with age.
+
+    \item \textit{Relationship Between Sleep Onset Time and Quality:} The moderate negative correlation observed between sleep onset time and quality suggests that a longer time to fall asleep might be associated with poorer sleep quality.
+
+    \item \textit{Influence of Exercise on Sleep Duration and Quality:} The slight positive correlation between exercise days per week and sleep duration hints at a potential hypothesis that increased physical activity could contribute to longer and possibly better quality sleep.
+
+    \item \textit{Nap Duration's Effect on Nighttime Sleep Duration:} Although the correlation is weak, we could investigate whether the duration of naps has any effect on the duration of nighttime sleep.
+\end{itemize}
+\subsection*{Hypothesis I - Increased Sleep Disturbances Negatively Impact Sleep Quality}
+\textit{Null Hypothesis (\(H_0\))}: The level of Sleep Disturbances has no impact on Sleep Quality.
+
+\textit{Alternative Hypothesis (\(H_1\))}: The level of Sleep Disturbances negatively impacts Sleep Quality.
+
+To investigate the relationship between sleep disturbances and sleep quality, we utilized Spearman's rank correlation due to its ability to measure monotonic relationships without assuming a linear relationship between variables, which is suitable for ordinal data. Additionally, the Chi-squared test was employed to evaluate the independence of categorical variables.
+
+\begin{table}[ht]
+    \centering
+    \caption{Statistical Tests for Sleep Disturbances and Sleep Quality}
+    \label{tab:hypothesis1}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \textbf{Test Type}  & \textbf{Statistic} & \textbf{P-value}        & \textbf{Conclusion}            \\
+        \hline
+        Spearman's \(\rho\) & -0.453             & \(4.2 \times 10^{-7}\)  & Reject \(H_0\), accept \(H_1\)
+        \\
+        \hline
+        Chi-squared         & 46.03              & \(6.85 \times 10^{-6}\) & Reject \(H_0\), accept \(H_1\)
+        \\
+        \hline
+    \end{tabular}
+\end{table}
+The analysis of sleep disturbances and their impact on sleep quality yields significant findings. The Spearman correlation coefficient of -0.453 implies a moderate negative correlation, suggesting that increases in sleep disturbances are associated with deteriorations in sleep quality \cite{alhola2007sleep}. This relationship is statistically significant, with a p-value of \(4.2 \times 10^{-7}\), well below the alpha threshold of 0.05, leading us to reject the null hypothesis and affirm the alternative hypothesis \cite{morin2003cognitive}.
 
 In addition, the Chi-squared test's statistic of 46.03, exceeding the critical value for 12 degrees of freedom, and a p-value of \(6.85 \times 10^{-6}\), strengthens the evidence against the null hypothesis. It indicates a notable association between sleep disturbances and sleep quality in our dataset, aligning with findings in existing literature \cite{riemann2014pharmacological}.
 
 These outcomes resonate with previous research, which has highlighted various effects of sleep disturbances on sleep quality. Notably, disturbed sleep often leads to reduced overall sleep duration, falling short of the recommended 7-8 hours for adults \cite{morin2003cognitive}. Moreover, such disturbances can result in fragmented sleep, characterized by frequent awakenings and a shift away from restorative deep and REM sleep stages \cite{alhola2007sleep}. This disruption in sleep architecture is critical, as deep and REM sleep are vital for cognitive functions, emotional regulation, and overall physical health \cite{riemann2014pharmacological}.
 
-      \subsection*{Hypothesis II - Older People Have Shorter Night Sleep}
+\subsection*{Hypothesis II - Older People Have Shorter Night Sleep}
 \textit{Null Hypothesis (\(H_0\))}: Age group has no impact on Sleep Duration.
 
 \textit{Alternative Hypothesis (\(H_1\))}: Age group has a negative correlation with Sleep Duration.\\
@@ -284,18 +283,18 @@ The Pearson correlation coefficient was calculated as -0.232 with a p-value of 0
 A Kendall’s Tau test yielded a correlation of -0.204 with a p-value of 0.00619, reinforcing the presence of a weak negative correlation. The results allow us to reject the null hypothesis, affirming the alternative that there is a statistically significant, though mild, negative association between age group and sleep duration.
 
 \begin{table}[ht]
-\centering
-\caption{Statistical Tests for Age Group and Sleep Duration}
-\label{tab:hypothesis2}
-\begin{tabular}{|c|c|c|c|}
-\hline
-\textbf{Test Type} & \textbf{Correlation} & \textbf{P-value} & \textbf{Conclusion} \\
-\hline
-Pearson & -0.232 & 0.0088 & Reject \(H_0\), accept \(H_1\) \\
-\hline
-Kendall’s Tau & -0.204 & 0.00619 & Reject \(H_0\), accept \(H_1\) \\
-\hline
-\end{tabular}
+    \centering
+    \caption{Statistical Tests for Age Group and Sleep Duration}
+    \label{tab:hypothesis2}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \textbf{Test Type} & \textbf{Correlation} & \textbf{P-value} & \textbf{Conclusion}            \\
+        \hline
+        Pearson            & -0.232               & 0.0088           & Reject \(H_0\), accept \(H_1\) \\
+        \hline
+        Kendall’s Tau      & -0.204               & 0.00619          & Reject \(H_0\), accept \(H_1\) \\
+        \hline
+    \end{tabular}
 \end{table}
 
 Both tests corroborate the alternative hypothesis, suggesting that as individuals progress into higher age categories, a decrease in sleep duration may occur. However, the correlation is not strong, pointing to the influence of other factors not accounted for in this analysis.
@@ -309,18 +308,18 @@ Both tests corroborate the alternative hypothesis, suggesting that as individual
 The relationship between Sleep Onset Time and Sleep Quality was analyzed using Spearman's rank correlation for its suitability with ordinal data and the Chi-squared test to assess variable independence.
 
 \begin{table}[ht]
-\centering
-\caption{Statistical Testing of Sleep Onset Time Worsens Sleep Quality}
-\label{tab:hypothesis3}
-\begin{tabular}{|c|c|c|c|}
-\hline
-\textbf{Test Type} & \textbf{Statistic} & \textbf{P-value} & \textbf{Conclusion} \\
-\hline
-Spearman's \(\rho\) & -0.377641 & \(2.80 \times 10^{-5}\) & Reject \(H_0\), accept \(H_1\) \\
-\hline
-Chi-squared & 19.297 (DoF: 9) & 0.022782 & Reject \(H_0\), accept \(H_1\) \\
-\hline
-\end{tabular}
+    \centering
+    \caption{Statistical Testing of Sleep Onset Time Worsens Sleep Quality}
+    \label{tab:hypothesis3}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \textbf{Test Type}  & \textbf{Statistic} & \textbf{P-value}        & \textbf{Conclusion}            \\
+        \hline
+        Spearman's \(\rho\) & -0.377641          & \(2.80 \times 10^{-5}\) & Reject \(H_0\), accept \(H_1\) \\
+        \hline
+        Chi-squared         & 19.297 (DoF: 9)    & 0.022782                & Reject \(H_0\), accept \(H_1\) \\
+        \hline
+    \end{tabular}
 \end{table}
 
 The Spearman correlation coefficient of -0.377641 suggests a moderate inverse relationship, where longer Sleep Onset Time is associated with poorer Sleep Quality. The p-value of \(2.80 \times 10^{-5}\) indicates that this correlation is statistically significant and not due to chance.
@@ -340,15 +339,15 @@ Spearman's correlation was used to test for a potential positive association bet
     \caption{Spearman Correlation and Chi-squared Test for Exercise Frequency and Sleep Quality}
     \label{tab:hypothesis4a}
     \begin{tabular}{|c|c|c|c|}
-    \hline
-    \textbf{Test Type} & \textbf{Statistic} & \textbf{P-value} & \textbf{Conclusion} \\
-    \hline
-    Spearman's \(\rho\) & -0.0577 & 0.7235 & Accept \(H_0\), reject \(H_1\) \\
-    \hline
-    Chi-squared & 13.2199 & 0.1529 & Accept \(H_0\), reject \(H_1\) \\
-    \hline
+        \hline
+        \textbf{Test Type}  & \textbf{Statistic} & \textbf{P-value} & \textbf{Conclusion}            \\
+        \hline
+        Spearman's \(\rho\) & -0.0577            & 0.7235           & Accept \(H_0\), reject \(H_1\) \\
+        \hline
+        Chi-squared         & 13.2199            & 0.1529           & Accept \(H_0\), reject \(H_1\) \\
+        \hline
     \end{tabular}
-    \end{table}
+\end{table}
 
 The Spearman test resulted in a correlation coefficient of -0.0577 with a p-value of 0.7235, indicating no meaningful relationship between exercise frequency and sleep quality. The negative coefficient suggests a slight inverse trend, but the high p-value shows this is likely due to chance.
 
@@ -364,18 +363,18 @@ The Chi-squared test further supports the lack of evidence for an association. W
 Spearman's correlation and ANOVA tests were conducted to evaluate the relationship between exercise frequency and sleep duration.
 
 \begin{table}[ht]
-\centering
-\caption{Statistical Tests for Exercise Frequency and Sleep Duration}
-\label{tab:hypothesis4b}
-\begin{tabular}{|c|c|c|}
-\hline
-\textbf{Test Type} & \textbf{Statistic} & \textbf{P-value} \\
-\hline
-Spearman's \(\rho\) & 0.1805 & 0.0327 \\
-\hline
-ANOVA & 2.9423 & 0.0367 \\
-\hline
-\end{tabular}
+    \centering
+    \caption{Statistical Tests for Exercise Frequency and Sleep Duration}
+    \label{tab:hypothesis4b}
+    \begin{tabular}{|c|c|c|}
+        \hline
+        \textbf{Test Type}  & \textbf{Statistic} & \textbf{P-value} \\
+        \hline
+        Spearman's \(\rho\) & 0.1805             & 0.0327           \\
+        \hline
+        ANOVA               & 2.9423             & 0.0367           \\
+        \hline
+    \end{tabular}
 \end{table}
 
 The Spearman correlation coefficient of 0.1805 indicates a positive but weak relationship between exercise frequency and sleep duration, with a p-value of 0.0327 suggesting statistical significance.
@@ -393,18 +392,18 @@ The analysis suggests that regular exercise potentially contributes to increased
 Spearman's correlation and Kendall’s Tau tests were conducted to assess the relationship between nap duration and night sleep duration.
 
 \begin{table}[ht]
-\centering
-\caption{Statistical Tests for Nap Duration and Night Sleep Duration}
-\label{tab:hypothesis5}
-\begin{tabular}{|c|c|c|c|}
-\hline
-\textbf{Test Type} & \textbf{Statistic} & \textbf{P-value} & \textbf{Conclusion} \\
-\hline
-Spearman's \(\rho\) & -0.1208 & 0.1099 & Accept \(H_0\), reject \(H_1\) \\
-\hline
-Kendall’s Tau & -0.096 & 0.1145 & Accept \(H_0\), reject \(H_1\) \\
-\hline
-\end{tabular}
+    \centering
+    \caption{Statistical Tests for Nap Duration and Night Sleep Duration}
+    \label{tab:hypothesis5}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \textbf{Test Type}  & \textbf{Statistic} & \textbf{P-value} & \textbf{Conclusion}            \\
+        \hline
+        Spearman's \(\rho\) & -0.1208            & 0.1099           & Accept \(H_0\), reject \(H_1\) \\
+        \hline
+        Kendall’s Tau       & -0.096             & 0.1145           & Accept \(H_0\), reject \(H_1\) \\
+        \hline
+    \end{tabular}
 \end{table}
 
 The Spearman correlation coefficient of -0.1208 and a p-value of 0.1099 suggest a very weak negative relationship between nap duration and night sleep duration, but this is not statistically significant. Similarly, Kendall's Tau test shows a correlation coefficient of -0.096 and a p-value of 0.1145, also indicating a very weak negative correlation that does not provide enough statistical evidence to reject the null hypothesis. These results suggest that increased nap duration does not have a significant impact on reducing night sleep duration.
@@ -429,22 +428,22 @@ In this modeling section, we focus on using variables that exhibited high correl
 
 
 \subsection{Predicting Night Sleep Duration}
-The task of predicting night sleep duration was approached with multiple regression models. The models' performances were evaluated based on Mean Squared Error (MSE) and R-squared (R\(^2\)) scores. 
+The task of predicting night sleep duration was approached with multiple regression models. The models' performances were evaluated based on Mean Squared Error (MSE) and R-squared (R\(^2\)) scores.
 
 \begin{table}[ht]
-\centering
-\caption{Regression Models: Performance Metrics for Predicting Night Sleep Duration}
-\label{tab:regression-models}
-\begin{tabular}{|l|c|c|}
-\hline
-\textbf{Model} & \textbf{Mean Squared Error} & \textbf{R\(^2\) Score} \\
-\hline
-Linear Regression & 1.3389 & 0.2457 \\
-Decision Tree Regressor & 3.4192 & -0.9263 \\
-K-Nearest Neighbors & 1.6241 & 0.0850 \\
-Support Vector Machine & 1.5909 & 0.1037 \\
-\hline
-\end{tabular}
+    \centering
+    \caption{Regression Models: Performance Metrics for Predicting Night Sleep Duration}
+    \label{tab:regression-models}
+    \begin{tabular}{|l|c|c|}
+        \hline
+        \textbf{Model}          & \textbf{Mean Squared Error} & \textbf{R\(^2\) Score} \\
+        \hline
+        Linear Regression       & 1.3389                      & 0.2457                 \\
+        Decision Tree Regressor & 3.4192                      & -0.9263                \\
+        K-Nearest Neighbors     & 1.6241                      & 0.0850                 \\
+        Support Vector Machine  & 1.5909                      & 0.1037                 \\
+        \hline
+    \end{tabular}
 \end{table}
 
 The Linear Regression model showed the best performance with the lowest MSE, indicating higher predictive accuracy, and a modest R\(^2\) score, suggesting a reasonable fit to the data. In contrast, the Decision Tree Regressor performed poorly, with a high MSE and a negative R\(^2\) score, indicating overfitting. KNN and SVM had similar performance levels, but both were less effective than Linear Regression.
@@ -453,20 +452,20 @@ The Linear Regression model showed the best performance with the lowest MSE, ind
 For sleep quality, classification models including Multiclass Logistic Regression, Decision Tree Classifier, Random Forest, KNN, and SVM were evaluated based on accuracy and weighted average F1-score.
 
 \begin{table}[ht]
-\centering
-\caption{Classification Models: Performance Metrics for Predicting Sleep Quality}
-\label{tab:classification-models}
-\begin{tabular}{|l|c|c|}
-\hline
-\textbf{Model} & \textbf{Accuracy} & \textbf{Weighted Avg F1-Score} \\
-\hline
-Multiclass Logistic Regression & 0.32 & 0.28 \\
-Decision Tree Classifier & 0.55 & 0.62 \\
-Random Forest & 0.55 & 0.62 \\
-K-Nearest Neighbors & 0.50 & 0.47 \\
-SVM & 0.59 & 0.52 \\
-\hline
-\end{tabular}
+    \centering
+    \caption{Classification Models: Performance Metrics for Predicting Sleep Quality}
+    \label{tab:classification-models}
+    \begin{tabular}{|l|c|c|}
+        \hline
+        \textbf{Model}                 & \textbf{Accuracy} & \textbf{Weighted Avg F1-Score} \\
+        \hline
+        Multiclass Logistic Regression & 0.32              & 0.28                           \\
+        Decision Tree Classifier       & 0.55              & 0.62                           \\
+        Random Forest                  & 0.55              & 0.62                           \\
+        K-Nearest Neighbors            & 0.50              & 0.47                           \\
+        SVM                            & 0.59              & 0.52                           \\
+        \hline
+    \end{tabular}
 \end{table}
 
 In predicting sleep quality, the SVM model emerged as the most accurate with the highest overall accuracy and F1-score. Both Decision Tree and Random Forest models showed commendable performance but were slightly less effective than SVM. The Multiclass Logistic Regression model, however, had the lowest accuracy and F1-score, indicating its limited suitability for this particular task.
@@ -513,11 +512,11 @@ We would like to express our deepest gratitude to a number of individuals and or
 
 \begin{enumerate}
     \item Our heartfelt thanks go to our families and friends. Their unwavering emotional support and active participation in our survey played a crucial role in this research. Their encouragement and involvement were key to the study's success.
-    
+
     \item We extend our sincere appreciation to Professor Eunhui Kim, Yuna Jeong, and Teaching Assistant Nilesh Kumar Srivastava at KISTI. Their profound expertise, guidance in analytical techniques, and consistent support throughout the semester have greatly enriched our learning experience and contributed immensely to our research.
-    
+
     \item A special thank you to our dedicated team members. This project was a collaborative effort involving brainstorming, designing the survey, data analysis, hypothesis formation, and modeling. The hard work, commitment, and collective efforts of each team member were instrumental in bringing this project to fruition.
-    
+
     \item We are grateful to the University of Science and Technology (UST) and the Korea Institute of Science and Technology Information (KISTI) for organizing this remarkable program. Their scholarship has provided us with a unique opportunity to learn and experience the technological advancements in Korea. Their support has been pivotal in our academic and professional growth.
 \end{enumerate}
 
@@ -527,4 +526,3 @@ This project stands as a testament to the power of collaboration, mentorship, an
 \bibliography{references}
 
 \end{document}
- 
