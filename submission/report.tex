@@ -264,10 +264,12 @@ The observed correlations from the data analysis and visualizations suggest seve
       \hline
       \end{tabular}
       \end{table}
-      
-      The Spearman correlation coefficient of -0.453 suggests a moderate negative correlation, indicating that increases in sleep disturbances are associated with decreases in sleep quality. Given the p-value of \(4.2 \times 10^{-7}\), which is substantially below the alpha threshold of 0.05, we reject the null hypothesis, affirming the alternative hypothesis of a negative impact of sleep disturbances on sleep quality.
-      
-      Similarly, the Chi-squared test yields a statistic of 46.03, surpassing the critical value for 12 degrees of freedom. Alongside a p-value of \(6.85 \times 10^{-6}\), this provides strong evidence against the null hypothesis, suggesting a significant association between sleep disturbances and sleep quality in our dataset.
+      The analysis of sleep disturbances and their impact on sleep quality yields significant findings. The Spearman correlation coefficient of -0.453 implies a moderate negative correlation, suggesting that increases in sleep disturbances are associated with deteriorations in sleep quality \cite{alhola2007sleep}. This relationship is statistically significant, with a p-value of \(4.2 \times 10^{-7}\), well below the alpha threshold of 0.05, leading us to reject the null hypothesis and affirm the alternative hypothesis \cite{morin2003cognitive}.
+
+In addition, the Chi-squared test's statistic of 46.03, exceeding the critical value for 12 degrees of freedom, and a p-value of \(6.85 \times 10^{-6}\), strengthens the evidence against the null hypothesis. It indicates a notable association between sleep disturbances and sleep quality in our dataset, aligning with findings in existing literature \cite{riemann2014pharmacological}.
+
+These outcomes resonate with previous research, which has highlighted various effects of sleep disturbances on sleep quality. Notably, disturbed sleep often leads to reduced overall sleep duration, falling short of the recommended 7-8 hours for adults \cite{morin2003cognitive}. Moreover, such disturbances can result in fragmented sleep, characterized by frequent awakenings and a shift away from restorative deep and REM sleep stages \cite{alhola2007sleep}. This disruption in sleep architecture is critical, as deep and REM sleep are vital for cognitive functions, emotional regulation, and overall physical health \cite{riemann2014pharmacological}.
+
       \subsection*{Hypothesis II - Older People Have Shorter Night Sleep}
 \textit{Null Hypothesis (\(H_0\))}: Age group has no impact on Sleep Duration.
 
@@ -381,7 +383,7 @@ The Spearman correlation coefficient of 0.1805 indicates a positive but weak rel
 The ANOVA test yields an F-statistic of 2.9423 and a p-value of 0.0367, confirming significant differences in sleep duration among different levels of exercise frequency.
 
 \textbf{Conclusion:}
-While the Spearman test suggests a positive correlation between exercise frequency and sleep duration, the relationship is weak. The ANOVA test reveals significant differences in sleep duration across exercise frequency groups. These findings imply that while an increase in exercise frequency might be associated with longer sleep duration, further analysis is required to fully understand the dynamics of this relationship.
+The analysis suggests that regular exercise potentially contributes to increased sleep duration, although the correlation identified is relatively weak. The ANOVA test indicates significant variations in sleep duration across different exercise frequency groups. This points to the likelihood that incorporating exercise into daily routines could lead to extended sleeping hours. However, the precise nature and extent of this relationship between exercise intensity and sleep duration warrant further investigation. Past studies have underscored the benefits of moderate-intensity exercise for enhancing sleep quality and duration, advising against intense physical activities close to bedtime due to their potential to disrupt sleep onset \cite{sleepfoundation, aasmsleep, mayoclinicsleep}.
 
 \subsection*{Hypothesis V - Increased Nap Time Decreases Night Sleep Duration}
 \textit{Null Hypothesis (\(H_0\))}: Increase in Nap Time has no impact on Night Sleep Duration.
@@ -474,11 +476,10 @@ The modeling analysis indicates that for predicting night sleep duration, Linear
 
 \section{Conclusion}
 
-Our study embarked on an in-depth examination of the complex interplay between various lifestyle factors and their impacts on sleep quality and duration. The significant correlations identified through hypothesis testing between sleep disturbances, age, exercise frequency, nap duration, and sleep onset time with sleep quality and duration highlight the intricate nature of sleep dynamics.
+Our study investigated the complex relationship between lifestyle factors and sleep, revealing key insights. Hypothesis testing and correlation analysis identified critical links: increased sleep disturbances and advancing age negatively impact sleep quality and duration, while exercise frequency showed a positive correlation with sleep duration. Nap duration, however, did not significantly affect night sleep duration.
 
-In the modeling phase, we utilized key variables, drawing on findings from hypothesis testing, to predict night sleep duration and sleep quality using various machine learning techniques. The regression models, especially Linear Regression, showed promising results in predicting night sleep duration, whereas the SVM classification model proved most accurate in predicting sleep quality. Nevertheless, these models demonstrated certain limitations, indicating areas for further refinement in future research.
+In the modeling phase, Linear Regression effectively predicted night sleep duration, and SVM stood out in predicting sleep quality. These results highlight the nuances in sleep dynamics and the potential of machine learning to address them. Despite some limitations, our study contributes important empirical findings, suggesting that addressing specific lifestyle factors could improve sleep quality and duration. This research paves the way for future studies to further explore and refine these relationships, enhancing our understanding of sleep health.
 
-This research contributes valuable empirical insights into the factors influencing sleep, suggesting that targeted lifestyle modifications could enhance sleep quality and duration. The study also underscores the potential of machine learning in sleep research, despite the challenges posed by the complexity of sleep patterns.
 
 However, our study faced several limitations:
 \begin{itemize}
