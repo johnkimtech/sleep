@@ -35,13 +35,9 @@
 \end{IEEEkeywords}
 
 \section{Introduction}
-The interplay between lifestyle and sleep quality is an increasingly pertinent subject in the realm of public health. To explore this intricate relationship, we embarked on a comprehensive data collection campaign, developing a structured survey that captures a wide array of lifestyle variables alongside sleep metrics. The survey's design allowed for the nuanced capture of daily routines, technological interactions, and exercise habits.
+Our study explored the complex relationship between lifestyle factors and sleep quality through a structured survey capturing various daily activities and sleep metrics. This comprehensive data collection focused on routines, technological use, and exercise habits. The data underwent extensive cleaning for analytical robustness, and an initial exploratory analysis using a correlation matrix heatmap identified potential variable relationships, setting the stage for hypothesis development.
 
-Post-collection, data processing commenced with rigorous cleaning techniques to ensure integrity and analytical viability. Our initial exploratory analysis hinged on the construction of a correlation matrix heatmap, which served as a visual aid to discern potential relationships between variables. This graphical representation provided the preliminary clues necessary for subsequent hypothesis formulation.
-
-Armed with hypotheses, we delved into a variety of statistical tests. Spearman's rank correlation offered insights into monotonic relationships, while Pearson's correlation assessed linear dependencies. For categorical data, the Chi-squared test\cite{chi} evaluated associations between discrete variables. These statistical methodologies were pivotal in distilling the factors most relevant to sleep quality.
-
-The culmination of our hypothesis testing informed the selection of variables for model fitting. We implemented a variety of machine learning models, including, but not limited to, regression analyses, decision trees, and support vector machines. Each model was rigorously evaluated to determine its predictive power and relevance to our study.
+We then tested these hypotheses using statistical methods such as Spearman's and Pearson's correlations for understanding monotonic and linear relationships, and the Chi-squared test for categorical data associations. The results guided the selection of key variables for developing machine learning models, including regression analyses, decision trees, and support vector machines, which were critically assessed for their predictive accuracy in the context of sleep quality.
 
 Our contributions through this research are multifaceted. Initially, we developed a foundational survey engineered to assess sleep and lifestyle variables. Subsequently, we discerned pivotal factors that influence sleep quality by leveraging statistical analysis and hypothesis testing. Furthermore, we harnessed machine learning algorithms to construct models based on these factors. Our study establishes a framework for future exploration, highlighting the necessity for continuous data accumulation to refine and augment model efficacy. We invite researchers and the public alike to contribute to our ongoing work (available on GitHub\footnotemark) through feedback and new applications of our findings.
 \footnotetext{\url{https://github.com/johnkimtech/sleep}}
@@ -75,8 +71,7 @@ The lifestyle section encompassed questions regarding exercise frequency, device
     \item\textbf{Sleep Disturbances}: The frequency of disturbances such as waking up during the night or experiencing restless sleep was also captured.
 \end{itemize}
 \subsubsection*{Contributions}
-Our survey, though limited by its distribution method, provides valuable insights into sleep quality and its influencing factors. The subsequent statistical and machine learning analyses contribute to a nuanced understanding of sleep dynamics, laying the groundwork for future research in this field.
-\subsection{Preprocessing: Translation, Merging, and Cleanup}
+Utilizing a survey of 108 participants, this study, though limited by distribution methods, leverages statistical and machine learning analyses to offer a nuanced understanding of sleep dynamics and lay the groundwork for future research.\subsection{Preprocessing: Translation, Merging, and Cleanup}
 \subsubsection*{Translation}
 To harness the collected data effectively in the subsequent stages of analysis, it was imperative to amalgamate the survey responses from all language versions into a single dataframe. This posed significant challenges, as the survey questions and responses were presented in various languages, and even the English version contained verbose questions and answers. To address these issues, we:
 
@@ -515,7 +510,20 @@ We would like to express our deepest gratitude to a number of individuals and or
 
     \item We extend our sincere appreciation to Professor Eunhui Kim, Yuna Jeong, and Teaching Assistant Nilesh Kumar Srivastava at KISTI. Their profound expertise, guidance in analytical techniques, and consistent support throughout the semester have greatly enriched our learning experience and contributed immensely to our research.
 
-    \item A special thank you to our dedicated team members. This project was a collaborative effort involving brainstorming, designing the survey, data analysis, hypothesis formation, and modeling. The hard work, commitment, and collective efforts of each team member were instrumental in bringing this project to fruition.
+    \item  We express our profound appreciation to the esteemed members of our research team (Table \ref{tab:teamroles}). Their unwavering dedication, manifested through collaborative brainstorming sessions, meticulous survey design, rigorous data analysis, and the formulation of well-founded hypotheses, served as the bedrock upon which this project's success was ultimately constructed.
+    \begin{table}[ht]
+        \centering
+        \caption{Team members and roles}
+        \label{tab:teamroles}
+        \begin{tabular}{|l|c|c|}
+            \hline
+            \textbf{Member} & \textbf{Role} \\ \hline
+            Solomon Rukundo & Hypothesis testing, Presentation. \\ \hline
+            Md Mahmdul Hassan  & Data analysis, visualisation, evaluation. \\ \hline
+            Hoang Nguyen  & Data collection and cleaning, modelling. \\
+            \hline
+        \end{tabular}
+    \end{table}
 
     \item We are grateful to the University of Science and Technology (UST) and the Korea Institute of Science and Technology Information (KISTI) for organizing this remarkable program. Their scholarship has provided us with a unique opportunity to learn and experience the technological advancements in Korea. Their support has been pivotal in our academic and professional growth.
 \end{enumerate}
